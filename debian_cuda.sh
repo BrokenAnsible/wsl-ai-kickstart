@@ -148,16 +148,14 @@ echo ""
 echo "=== Step 4: Install UV (Python Package Manager) ==="
 # Check if UV already installed
 if ! command -v uv &> /dev/null; then
-    echo "Installing UV..."
     # Install UV - ultra-fast Python package manager
-    curl -LsSf https://astral.sh/uv/install.sh | sh
+    # UV Installation - run as user
+    echo "Installing UV for user $WSL_USERNAME..."
+    su - "$WSL_USERNAME" -c 'curl -LsSf https://astral.sh/uv/install.sh | sh'
 
-    # Add UV to PATH for current session
-    export PATH="$HOME/.cargo/bin:$PATH"
-
-    # Add UV to PATH permanently for all users (check if not already added)
+     # Add UV to user's PATH
     if ! grep -q "/.cargo/bin" /etc/bash.bashrc; then
-        echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> /etc/bash.bashrc
+        echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> /home/$WSL_USERNAME/.bashrc
     fi
 
     # Test UV installation
