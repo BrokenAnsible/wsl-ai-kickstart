@@ -71,6 +71,18 @@ if ! command -v curl &> /dev/null; then
     apt install -y curl
 fi
 
+# Install zip first since we need it for other installations
+if ! command -v zip &> /dev/null; then
+    echo "Installing zip..."
+    apt install -y zip
+fi
+
+# Install unzip first since we need it for other installations
+if ! command -v unzip &> /dev/null; then
+    echo "Installing unzip..."
+    apt install -y unzip
+fi
+
 echo ""
 echo "=== Step 3: Install CUDA Repository ==="
 # Check if CUDA keyring already installed
