@@ -119,8 +119,8 @@ echo "=== Step 3: Configure CUDA Environment ==="
 # Add CUDA to PATH permanently
 if ! grep -q "/usr/local/cuda-12.6/bin" ~/.bashrc; then
     echo "Configuring CUDA environment..."
-    echo 'export PATH=/usr/local/cuda-12.6/bin:$PATH' >> ~/.bashrc
-    echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.6/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+    echo 'export PATH=/usr/local/cuda-12.6/bin:$PATH' >> /home/$WSL_USERNAME/.bashrc
+    echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.6/lib64:$LD_LIBRARY_PATH' >> /home/$WSL_USERNAME/.bashrc
 else
     echo "CUDA environment already configured"
 fi
