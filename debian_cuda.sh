@@ -62,6 +62,12 @@ echo "Default user configured: $WSL_USERNAME"
 echo "WSL will use this user by default after restart"
 
 echo ""
+echo "=== Configure User Home Directory Startup ==="
+# Ensure user starts in their home directory
+echo 'cd ~' >> /home/$WSL_USERNAME/.bashrc
+echo "Configured $WSL_USERNAME to start in home directory"
+
+echo ""
 echo "=== Step 2: System Update and Install Essential Tools ==="
 apt update && apt upgrade -y
 
