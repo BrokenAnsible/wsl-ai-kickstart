@@ -54,8 +54,8 @@ generateHosts=true
 generateResolvConf=true
 
 [interop]
-enabled=true
-appendWindowsPath=true
+enabled=false
+appendWindowsPath=false
 EOF
 
 echo "Default user configured: $WSL_USERNAME"
