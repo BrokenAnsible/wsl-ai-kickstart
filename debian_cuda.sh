@@ -2,7 +2,8 @@
 
 # WSL Debian 13 AI Setup Script
 # Run this after fresh WSL Debian installation
-# Upgrades to Debian 13 (Trixie) and installs CUDA + Docker for AI workflows
+# Upgrades to Debian 13 (Trixie) and installs CUDA + UV + SDKMan for AI workflows
+# Create a template post install to save bandwidth for internet limits.
 
 set -e  # Exit on any error
 
